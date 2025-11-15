@@ -1,0 +1,3 @@
+.mainSider :global(.ant-tabs-ink-bar) {
+    transition: none !important;
+}

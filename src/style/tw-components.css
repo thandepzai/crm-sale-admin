@@ -1,0 +1,24 @@
+@tailwind components;
+
+@layer components {
+    .button-zoom-in {
+        @apply transition transform hover:scale-100 active:scale-[98];
+    }
+
+    .button-zoom-out {
+        @apply transition transform hover:scale-100 active:scale-[110];
+    }
+
+    .button-zoom-out-large {
+        @apply transition transform hover:scale-100 active:scale-[125];
+    }
+
+    .header-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 34px;
+        @apply md:text-xl;
+    }
+
+    /* nta creator below */
+}

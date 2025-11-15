@@ -1,0 +1,19 @@
+@import "./font.css";
+@import "./tw-base.css";
+@import "./tw-components.css";
+@import "./tw-utilities.css";
+
+@import "scrollbar.css";
+
+:root {
+    --scrollbar-width: calc(100vw - 100%);
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media all and (min-width: 640px) {
+    :root {
+        font-size: 14px;
+    }
+}

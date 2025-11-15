@@ -1,0 +1,93 @@
+/* .scroll-bar-firefox-transparent {
+    scrollbar-width: 6px;
+    scrollbar-color: transparent;
+}
+
+.scroll-bar-firefox {
+    scrollbar-width: 6px;
+    scrollbar-color: #d0cdcc;
+} */
+
+/* scrollbar vertical hidden */
+.scrollbar-y-hidden::-webkit-scrollbar {
+    width: 6px;
+    visibility: hidden;
+}
+
+/* scrollbar vertical dark */
+.scrollbar-y-dark::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-y-dark::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+.scrollbar-y-dark::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.scrollbar-y-dark::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* scrollbar vertical light */
+.scrollbar-y-light::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-y-light::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+.scrollbar-y-light::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.scrollbar-y-light::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* scrollbar horizontal hidden */
+.scrollbar-x-hidden::-webkit-scrollbar {
+    height: 6px;
+    visibility: hidden;
+}
+
+/* scrollbar horizontal dark */
+.scrollbar-x-dark::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollbar-x-dark::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+.scrollbar-x-dark::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.scrollbar-x-dark::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* scrollbar horizontal light */
+.scrollbar-x-light::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollbar-x-light::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+.scrollbar-x-light::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.scrollbar-x-light::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
