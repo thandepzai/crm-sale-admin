@@ -1,25 +1,32 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2021",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@style/*": ["style/*"],
+
+      "@lib/*": ["lib/*"],
+
+      "@module/*": ["module/*"]
     }
   },
   "include": [
@@ -27,8 +34,13 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "src/utils/common/functions.ts",
+    "tailwind.config.js",
+    "src/theme/index.js",
+    "src/theme/fontSize.s",
+    "src/theme/color.tjs",
+    "src/theme/spacing.js",
+    "src/theme/color.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.draft.*", "**/*.draft/*"]
 }

@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Enviroment Requirement
 
-## Getting Started
+-   Node Version: 20.10.0
+-   VSCode plugin: Prettier, Eslint
+-   Package management by Yarn:
 
-First, run the development server:
+    ```
+    npm install yarn
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    ```
+    // run yarn in responsitory
+    yarn
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Flow working with git
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   Git tree includes master, develop, feature and hotfix branch
+-   **Master**: Branch for product release
+-   **Develop**: Main working branch, include almost history code of project
+-   **Feature**: Checkout from develop, for individual purpose. Example: feature/login, feature/home, feature/course, ...
+-   **Hotfix**: For hot fix bugs, use it when needing apply small change code to fast fix bugs. Merge to develop and master after commit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Note:
 
-## Learn More
+-   Do
 
-To learn more about Next.js, take a look at the following resources:
+    ```
+    git pull origin develop
+    git checkout feature/home
+    git merge develop
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    frequently for update newest status from remote develop, to avoid conflict.<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   Commit and push feature branch (feature/home, feature/login) frequently.
 
-## Deploy on Vercel
+-   After done a specific commit from a feature and want to merge to develop, don't merge directly from local.<br>
+    ❌ Don't do this
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```
+    git checkout develop
+    git merge feature/home
+    git push
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ✅ Do this: Create a pull request (merge request) from github page, to merge feature/home to develop branch.
+
+-   In case of conflict, changing base code, creating a hot fix, -> need a dicussion.
+
+## Project Structure
+
+-   Project structure includes two main parts: **lib**, **module** and other sub parts <br>
+
+    ```
+    📦src
+    ├── 📂env
+    ├── 📂lib
+    │   ├── 📂component
+    │   │   ├── 📂BottomSheet
+    │   │   ├── 📂Modal
+    │   ├── 📂exception
+    │   ├── 📂hook
+    │   └── 📂util
+    ├── 📂module
+    │   ├── 📂_core
+    │   │   ├── 📂app
+    │   │   │   ├── 📂component
+    │   │   │   │   ├── 📂AppModal
+    │   │   │   │   ├── 📂AppWrapper
+    │   │   │   ├── 📂config
+    │   │   │   │   └── 📂type
+    │   │   │   ├── 📂icon
+    │   │   │   ├── 📂layout
+    │   │   │   │   ├── 📂Footer
+    │   │   │   │   ├── 📂Header
+    │   │   │   └── 📂style
+    │   │   ├── 📂domain
+    │   │   │   ├── 📂constant
+    │   │   │   └── 📂service
+    │   │   └── 📂infras
+    │   │       ├── 📂config
+    │   │       │   ├── 📂endpointUrl
+    │   │       │   ├── 📂exception
+    │   │       │   ├── 📂request
+    │   │       │   └── 📂type
+    │   │       ├── 📂hook
+    │   │       └── 📂util
+    │   ├── 📂auth
+    │   ├── 📂common
+    │   ├── 📂course
+    │   │   ├── 📂app
+    │   │   │   ├── 📂icon
+    │   │   │   ├── 📂component
+    │   │   │   │   ├── videoCard
+    │   │   │   └── 📂view
+    │   │   │   │   ├── 📂course
+    │   │   │   │   ├── 📂courseRegister
+    │   │   │   │   ├── 📂courses
+    │   │   │   │   ├── 📂lesson
+    │   │   │   │   └── 📂test
+    │   │   ├── 📂domain
+    │   │   │   ├── 📂api
+    │   │   │   ├── 📂config
+    │   │   │   │   └── 📂type
+    │   │   │   ├── 📂constant
+    │   │   │   ├── 📂dto
+    │   │   │   ├── 📂model
+    │   │   │   └── 📂service
+    │   │   └── 📂infras
+    │   │       ├── 📂config
+    │   │       │   ├── 📂endpointUrl
+    │   │       │   ├── 📂type
+    │   │       └── 📂util
+    │   ├── 📂interaction
+    │   ├── 📂news
+    │   └── 📂qa
+    ├── 📂style
+    ```
+
+> **lib** for library that built by core developer, using as the base of any similar project.
+
+-   **component**: provides many ready components, like other component from github
+-   **hook**: provides many hooks many can help developing
+-   **util**: provides many functions may can help developing
+
+> **module** is the area that developer works. We implement **DDD (Domain Driven Design)** for project architecture. It have **\_core** module like setup, config, shared component, ... and other module that have own business. In each module, we have:
+
+-   **app**: For UI layer, include **view**, **component**, **icon**, **layout**, **style**, ... that using for this module.
+-   **domain**: For Logic layer, include **dto**, **api**, **service**, ...
+-   **infras**: Frastructure, for base config in module, like connecting to third party, defined endpoint-url, ...
