@@ -40,7 +40,7 @@ const MainHeader = ({
   return (
     <Layout.Header
       className={clsx(
-        "h-16 px-8 flex items-center justify-between border-b-[1px]",
+        "h-16 px-8 flex items-center justify-between border-b",
         pathname === "/" ? "bg-[#eff2f6]" : "bg-white"
       )}
     >
@@ -66,7 +66,7 @@ const MainHeader = ({
             <ArrowLeftOutlined />
           </Link>
         ) : null}
-        <div className="block-heading text-base! tab:!text-xl line-clamp-2">
+        <div className="block-heading text-base! tab:text-xl! line-clamp-2">
           {dataHeader.title}
         </div>
       </div>

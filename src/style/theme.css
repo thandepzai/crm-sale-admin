@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  /* -------------------- SPACING -------------------- */
+  --spacing-4.5: 1.125rem;
+  --spacing-5.5: 1.375rem;
+  --spacing-6.5: 1.675rem;
+
+  /* -------------------- COLORS -------------------- */
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-block: var(--block);
+  --color-primary-typo: var(--primary-typo);
+  --color-secondary-typo: var(--secondary-typo);
+
+  --color-ant-primary: var(--ant-primary);
+  --color-ant-primary-light: var(--ant-primary-light);
+  --color-ant-error: var(--ant-error);
+  --color-ant-error-light: var(--ant-error-light);
+
+  --color-background-android: #f2f2f2;
+
+  /* -------------------- FONT SIZE -------------------- */
+  --font-size-xs: 0.75rem;
+  --font-size-xs--line-height: 1rem;
+
+  --font-size-smer: 0.8125rem;
+  --font-size-smer--line-height: 1rem;
+
+  --font-size-sm: 0.875rem;
+  --font-size-sm--line-height: 1.25rem;
+
+  --font-size-cp: 0.9375rem;
+  --font-size-cp--line-height: 1.3333rem;
+
+  --font-size-base: 1rem;
+  --font-size-base--line-height: 1.5rem;
+
+  --font-size-md: 1.0625rem;
+  --font-size-md--line-height: 1.625rem;
+
+  --font-size-lg: 1.125rem;
+  --font-size-lg--line-height: 1.75rem;
+
+  --font-size-xl: 1.25rem;
+  --font-size-xl--line-height: 1.75rem;
+
+  --font-size-2xl: 1.5rem;
+  --font-size-2xl--line-height: 2rem;
+
+  --font-size-3xl: 1.875rem;
+  --font-size-3xl--line-height: 2.25rem;
+
+  --font-size-4xl: 2.25rem;
+  --font-size-4xl--line-height: 2.5rem;
+
+  --font-size-5xl: 3rem;
+  --font-size-5xl--line-height: 1;
+
+  --font-size-6xl: 3.75rem;
+  --font-size-6xl--line-height: 1;
+
+  --font-size-7xl: 4.5rem;
+  --font-size-7xl--line-height: 1;
+
+  --font-size-8xl: 6rem;
+  --font-size-8xl--line-height: 1;
+
+  /* -------------------- SCREENS -------------------- */
+  --breakpoint-mobx: 480px;
+  --breakpoint-tab: 730px;
+  --breakpoint-tabx: 830px;
+  --breakpoint-tabxx: 960px;
+  --breakpoint-lap: 1080px;
+  --breakpoint-lapx: 1280px;
+  --breakpoint-desk: 1440px;
+  --breakpoint-deskx: 1600px;
+
+  --container-mobx: 480px;
+  --container-tab: 730px;
+  --container-tabx: 830px;
+  --container-tabxx: 960px;
+  --container-lap: 1080px;
+  --container-lapx: 1280px;
+  --container-desk: 1440px;
+  --container-deskx: 1600px;
+
+  /* -------------------- BLUR -------------------- */
+  --blur-0: 0;
+  --blur-sm: 4px;
+  --blur: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+  --blur-2xl: 32px;
+  --blur-3xl: 40px;
+  --blur-4xl: 64px;
+
+  /* -------------------- FONT FAMILY -------------------- */
+  --font-family-sans: Google Sans, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* -------------------- ROTATE -------------------- */
+  --rotate--180: -180deg;
+  --rotate--90: -90deg;
+  --rotate--45: -45deg;
+  --rotate--12: -12deg;
+  --rotate--6: -6deg;
+  --rotate--3: -3deg;
+  --rotate--2: -2deg;
+  --rotate--1: -1deg;
+  --rotate-0: 0deg;
+  --rotate-1: 1deg;
+  --rotate-2: 2deg;
+  --rotate-3: 3deg;
+  --rotate-6: 6deg;
+  --rotate-12: 12deg;
+  --rotate-45: 45deg;
+  --rotate-90: 90deg;
+  --rotate-180: 180deg;
+}

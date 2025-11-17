@@ -2,11 +2,11 @@
 
 import MainLayout from "module/_core/app/layout";
 import { AuthService } from "module/auth/domain/service/auth";
-import { useIsomorphicLayoutEffect } from "@react-pdf-viewer/core";
 import dynamic from "next/dynamic";
 import LoadingOverlay from "../Loading/LoadingOverlay";
 import { useInitWindownSize } from "@lib/hook/useWindowSize";
 import { usePathname, useRouter } from "next/navigation";
+import { useIsomorphicLayoutEffect } from "@lib/hook/useIsomorphicLayoutEffect";
 
 interface AppWrapperProps {
   children: React.ReactNode;
@@ -45,15 +45,11 @@ const AppWrapper = ({ children }: AppWrapperProps) => {
 
   return (
     <div id="root" className="invisible">
-      {/* <MainLayout>
+      <MainLayout>
         <LoadingOverlay />
         {children}
         <AnonyMousComponentHook />
-      </MainLayout> */}
-      <LoadingOverlay />
-      {children}
-      <AnonyMousComponentHook />
-      <MainLayout>213</MainLayout>
+      </MainLayout>
     </div>
   );
 };

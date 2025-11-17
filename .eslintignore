@@ -1,6 +1,0 @@
-.next
-dist
-node_modules/
-src/base/*
-**/*.draft.tsx
-**/*.draft/*

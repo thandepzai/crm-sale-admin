@@ -1,6 +1,4 @@
 "use client";
-import "@style/globals.css";
-import { ThemeProvider } from "@style/antd.theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ConfigProvider } from "antd";
@@ -21,7 +19,7 @@ export default function TanstackProvider({
 }>) {
     return (
         <QueryClientProvider client={queryClient}>
-            <ConfigProvider theme={ThemeProvider}>
+            <ConfigProvider>
                 {children}
                 <ReactQueryDevtools initialIsOpen={false} />
             </ConfigProvider>

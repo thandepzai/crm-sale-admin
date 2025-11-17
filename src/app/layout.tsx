@@ -3,6 +3,7 @@ import AppWrapper from "@module/_core/app/component/AppWrapper";
 import "@ant-design/v5-patch-for-react-19";
 import { App as AntdApp, ConfigProvider } from "antd";
 import { GlobalNotification } from "@module/_core/app/component/GlobalNotification";
+import "@style/globals.css";
 
 export default function RootLayout({
   children,

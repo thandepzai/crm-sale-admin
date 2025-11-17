@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 
 const env = {
   production: {
@@ -15,7 +15,7 @@ const env = {
   },
 };
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: false,
   outputFileTracingRoot: __dirname,
   typescript: {
@@ -37,18 +37,10 @@ const nextConfig = {
     "rc-table",
     "node-tikzjax",
   ],
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      canvas: false
-    };
-    return config;
-  },
-  
   env: {
     APP_ENV: process.env.APP_ENV,
     ...env[process.env.APP_ENV ?? ""],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
