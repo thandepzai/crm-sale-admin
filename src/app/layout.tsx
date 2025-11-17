@@ -1,9 +1,7 @@
 import TanstackProvider from "@module/_core/app/component/TanstackProvider";
 import AppWrapper from "@module/_core/app/component/AppWrapper";
 import "@ant-design/v5-patch-for-react-19";
-import { App as AntdApp, ConfigProvider } from "antd";
 import { GlobalNotification } from "@module/_core/app/component/GlobalNotification";
-import "@style/globals.css";
 
 export default function RootLayout({
   children,
@@ -36,12 +34,8 @@ export default function RootLayout({
       </head>
       <body className="font-sans">
         <TanstackProvider>
-          <ConfigProvider>
-            <AntdApp>
-              <GlobalNotification />
-              <AppWrapper>{children}</AppWrapper>
-            </AntdApp>
-          </ConfigProvider>
+            <GlobalNotification />
+            <AppWrapper>{children}</AppWrapper>
         </TanstackProvider>
       </body>
     </html>

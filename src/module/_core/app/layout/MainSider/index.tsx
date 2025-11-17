@@ -8,7 +8,6 @@ import { IMenuItem } from "./data";
 import { useWindowSize } from "@lib/hook/useWindowSize";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.css";
-import clsx from "clsx";
 import { ChevronsIcon } from "../../icon/ChevronsIcon";
 
 interface MainSiderProps {
@@ -44,7 +43,7 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
     const menuItems = [
       {
         key: "dev",
-        label: "Dev Page",
+        label: "Thống kê",
         url: "/dev",
         icon: React.createElement(HomeOutlined),
       },
@@ -102,11 +101,8 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
       collapsed={isSiderCollapsed}
       onMouseLeave={onHideScrollBar}
       onMouseEnter={onShowScrollBar}
-      className={clsx(
-        "fixed! z-30! h-auto! tab:relative! bg-white",
-        styles.mainSider
-      )}
-      style={{ minHeight: "100vh" }}
+      className="fixed! z-30! h-auto! tab:relative"
+      style={{ minHeight: "100vh", background: "white" }}
       collapsedWidth={deviceType === "mobile" ? 0 : "80px"}
     >
       <div className="mt-9 mb-7 h-12 flex items-center justify-between pr-6 pl-7">
@@ -131,7 +127,7 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
           mode="inline"
           defaultSelectedKeys={defaultSelectedKeys}
           defaultOpenKeys={defaultOpenKeys}
-          className="font-medium border-0!"
+          className={styles.mainMenu}
           items={MENU_ITEMS.map(({ key, label, icon, url, children }) => {
             const isSubMenu = children?.length;
             return {
