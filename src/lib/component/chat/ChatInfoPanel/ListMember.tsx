@@ -43,7 +43,7 @@ const ListMember = ({ meId, members, isLoading, openModal, className, itemClass 
                                             openModal("leave");
                                             setMemberIdPopupSetting(undefined);
                                         }}
-                                        className="cursor-pointer py-2 hover:bg-gray-200 active:bg-gray-300 font-medium px-2 rounded-lg gap-2 !justify-start text-red-500"
+                                        className="cursor-pointer py-2 hover:bg-gray-200 active:bg-gray-300 font-medium px-2 rounded-lg gap-2 justify-start! text-red-500"
                                     >
                                         <LogoutOutlined className="text-lg text-red-500" />
                                         <div className="flex-1 font-medium text-red-500">Rời nhóm</div>
@@ -54,7 +54,7 @@ const ListMember = ({ meId, members, isLoading, openModal, className, itemClass 
                                             openModal("kick", id);
                                             setMemberIdPopupSetting(undefined);
                                         }}
-                                        className="cursor-pointer py-2 hover:bg-gray-200 active:bg-gray-300 font-medium px-2 rounded-lg gap-2 !justify-start text-red-500"
+                                        className="cursor-pointer py-2 hover:bg-gray-200 active:bg-gray-300 font-medium px-2 rounded-lg gap-2 justify-start! text-red-500"
                                     >
                                         <UserDeleteOutlined className="text-lg text-red-500" />
                                         Xoá thành viên

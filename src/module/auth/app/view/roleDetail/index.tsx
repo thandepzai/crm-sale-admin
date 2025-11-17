@@ -218,7 +218,7 @@ const RoleDetailView = () => {
                 <AppLoadingView containerClassName="h-[60vh]" />
             ) : roleDetail.data ? (
                 <MainForm name="updateRoleForm" form={updateRoleForm} className="relative">
-                    {roleDetail.isFetching && <AppLoadingViewOverlay backDropClassName="!bg-[rgb(255,255,255,0.6)]" />}
+                    {roleDetail.isFetching && <AppLoadingViewOverlay backDropClassName="bg-[rgb(255,255,255,0.6)]!" />}
                     <div className="form-grid-container gap-y-4 mb-6">
                         {!isEditing ? (
                             <>

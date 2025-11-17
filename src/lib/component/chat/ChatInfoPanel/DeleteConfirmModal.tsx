@@ -60,7 +60,7 @@ const DeleteConfirmModal = forwardRef<DeleteConfirmModalModalHandler, DeleteConf
                     </button>
                     <Button
                         onClick={onOk}
-                        className="w-[120px] h-[40px] flex-center bg-red-500 !text-white rounded-lg font-medium hover:!bg-red-400 !border-none"
+                        className="w-[120px] h-[40px] flex-center bg-red-500 text-white! rounded-lg font-medium hover:bg-red-400! border-none!"
                         loading={isLoading}
                     >
                         Xác nhận

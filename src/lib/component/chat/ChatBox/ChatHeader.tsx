@@ -13,7 +13,7 @@ const ChatHeader = ({ name, avatar, backChat, showInfo, className }: ChatHeaderP
         <div className={clsx("h-[70px] bg-white border-b flex gap-4 items-center px-5 select-none", className)}>
             <div
                 onClick={backChat}
-                className="size-8 hover:bg-gray-100 rounded-lg cursor-pointer active:bg-gray-200 tabxx:!hidden"
+                className="size-8 hover:bg-gray-100 rounded-lg cursor-pointer active:bg-gray-200 tabxx:hidden!"
             >
                 <LeftOutlined className="font-bold text-xl" />
             </div>

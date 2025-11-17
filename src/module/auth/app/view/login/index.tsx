@@ -40,7 +40,7 @@ const LoginView = () => {
         <div className="absolute inset-0 flex-center">
             <MainForm name="loginForm" onFinish={handleSubmit}>
                 <div className="flex items-center text-secondary-typo tabx:px-10 lap:px-40">
-                    <div className="hidden tabx:flex flex-col justify-center items-center basis-1/2 lap:pr-32 border-r-[1px] border-r-[#DCECFC]">
+                    <div className="hidden tabx:flex flex-col justify-center items-center basis-1/2 lap:pr-32 border-r border-r-[#DCECFC]">
                         <div className="w-full mb-8">
                             <h2 className="text-[2.5rem] font-bold mb-2">Chào mừng trở lại</h2>
                             <p className="text-md w-80">
@@ -67,7 +67,7 @@ const LoginView = () => {
                         >
                             <Input.Password placeholder="Mật khẩu" />
                         </Form.Item>
-                        <Button type="primary" htmlType="submit" className="px-10 py-3 mb-8 !bg-primary !h-min">
+                        <Button type="primary" htmlType="submit" className="px-10 py-3 mb-8 bg-primary! h-min!">
                             Đăng nhập
                         </Button>
                     </div>

@@ -239,35 +239,35 @@ const UserView = () => {
                         name: "name",
                         label: "Họ và tên",
                         placeholder: "Họ và tên",
-                        className: "!w-[260px]"
+                        className: "w-[260px]!"
                     },
                     {
                         type: FilterFormItemType.Input,
                         name: "username",
                         label: "Tài khoản",
                         placeholder: "Tài khoản",
-                        className: "!w-[260px]"
+                        className: "w-[260px]!"
                     },
                     {
                         type: FilterFormItemType.Input,
                         name: "email",
                         label: "Email",
                         placeholder: "Email",
-                        className: "!w-[260px]"
+                        className: "w-[260px]!"
                     },
                     {
                         type: FilterFormItemType.Input,
                         name: "phone",
                         label: "Số điện thoại",
                         placeholder: "Số điện thoại",
-                        className: "!w-[260px]"
+                        className: "w-[260px]!"
                     },
                     {
                         type: FilterFormItemType.InputNumber,
                         name: "yob",
                         label: "Năm sinh",
                         placeholder: "Năm sinh",
-                        className: "!w-[180px]"
+                        className: "w-[180px]!"
                     },
                     {
                         type: FilterFormItemType.Select,
@@ -294,7 +294,7 @@ const UserView = () => {
                         name: "status",
                         label: "Trạng thái",
                         placeholder: "Trạng thái",
-                        className: "!w-[150px]",
+                        className: "w-[150px]!",
                         options: EntityStateOptions
                     }
                 ]}

@@ -206,7 +206,7 @@ const ItemOfUserView = () => {
                         name: "itemId",
                         label: "Vật phẩm",
                         placeholder: "Vật phẩm",
-                        className: "!w-[250px]",
+                        className: "w-[250px]!",
                         showSearch: true,
                         options: itemData?.consumptionItems.map((item) => ({ value: item.id, label: item.name })) ?? []
                     },
@@ -224,7 +224,7 @@ const ItemOfUserView = () => {
                         name: "status",
                         label: "Trạng thái",
                         placeholder: "Trạng thái",
-                        className: "!w-[250px]",
+                        className: "w-[250px]!",
                         options: StatusUserItemOption
                     }
                 ]}

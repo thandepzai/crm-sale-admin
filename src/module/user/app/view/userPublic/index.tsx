@@ -108,14 +108,14 @@ const UserPublicView = () => {
                         name: "name",
                         label: "Họ và tên",
                         placeholder: "Họ và tên",
-                        className: "!w-[260px]"
+                        className: "w-[260px]!"
                     },
                     {
                         type: FilterFormItemType.Input,
                         name: "email",
                         label: "Email",
                         placeholder: "Email",
-                        className: "!w-[260px]"
+                        className: "w-[260px]!"
                     },
                     {
                         type: FilterFormItemType.Input,
@@ -128,7 +128,7 @@ const UserPublicView = () => {
                         name: "yob",
                         label: "Năm sinh",
                         placeholder: "Năm sinh",
-                        className: "!w-[180px]"
+                        className: "w-[180px]!"
                     }
                     // {
                     //     type: FilterFormItemType.Select,

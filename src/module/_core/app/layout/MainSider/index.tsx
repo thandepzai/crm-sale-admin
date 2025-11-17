@@ -103,7 +103,7 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
       onMouseLeave={onHideScrollBar}
       onMouseEnter={onShowScrollBar}
       className={clsx(
-        "!fixed !z-30 !h-auto tab:!relative bg-white",
+        "fixed! z-30! h-auto! tab:relative! bg-white",
         styles.mainSider
       )}
       style={{ minHeight: "100vh" }}
@@ -121,7 +121,7 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
       </div>
 
       <div
-        className="sticky top-0 h-[100vh] overflow-auto scrollbar-y-hidden px-[3px]"
+        className="sticky top-0 h-screen overflow-auto scrollbar-y-hidden px-[3px]"
         style={{
           scrollbarGutter: "stable both-edges",
         }}
@@ -131,7 +131,7 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
           mode="inline"
           defaultSelectedKeys={defaultSelectedKeys}
           defaultOpenKeys={defaultOpenKeys}
-          className="font-medium !border-0"
+          className="font-medium border-0!"
           items={MENU_ITEMS.map(({ key, label, icon, url, children }) => {
             const isSubMenu = children?.length;
             return {

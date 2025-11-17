@@ -54,7 +54,7 @@ const UserDetailView = () => {
                 <AppLoadingView containerClassName="h-[30vh]" />
             ) : data ? (
                 <div className="relative responsive-form">
-                    {isFetching && <AppLoadingViewOverlay backDropClassName="!bg-[rgb(255,255,255,0.6)]" />}
+                    {isFetching && <AppLoadingViewOverlay backDropClassName="bg-[rgb(255,255,255,0.6)]!" />}
                     <UserForm ref={userFormRef} userData={data} />
                     <div className="mt-6 w-full flex justify-end">
                         <Button

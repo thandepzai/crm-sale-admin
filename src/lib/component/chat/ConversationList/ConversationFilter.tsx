@@ -36,7 +36,7 @@ const ConversationFilter = <TTagKey extends string = string>({
                 <input
                     type="text"
                     value={inputSearch}
-                    className="w-full rounded-lg bg-[#F0F3F7] border-none !ring-0 px-[37px] py-[8px] font-medium placeholder:text-[#B4C3D1]"
+                    className="w-full rounded-lg bg-[#F0F3F7] border-none ring-0! px-[37px] py-[8px] font-medium placeholder:text-[#B4C3D1]"
                     placeholder="Tìm kiếm"
                     onChange={(e) => setInputSearch(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && handleSearch()}

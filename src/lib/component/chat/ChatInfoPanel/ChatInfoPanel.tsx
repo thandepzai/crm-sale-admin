@@ -43,12 +43,12 @@ const ChatInfoPanel = ({
                     bordered={false}
                     expandIcon={() => null}
                     onChange={() => setShowUsers(!showUsers)}
-                    className="[&>div>.ant-collapse-header]:!p-0 [&>div>.ant-collapse-content]:!bg-white [&>div>div>.ant-collapse-content-box]:!p-0"
+                    className="[&>div>.ant-collapse-header]:p-0! [&>div>.ant-collapse-content]:bg-white! [&>div>div>.ant-collapse-content-box]:p-0!"
                     items={[
                         {
                             key: "1",
                             label: (
-                                <div className="flex p-3.5 rounded-lg bg-[#F6F7F8] gap-2 !justify-between">
+                                <div className="flex p-3.5 rounded-lg bg-[#F6F7F8] gap-2 justify-between!">
                                     <TeamOutlined className="text-[20px]" />
                                     <div className="flex-1 font-medium select-none">Thành viên trong đoạn chat</div>
                                     <RightOutlined
@@ -66,14 +66,14 @@ const ChatInfoPanel = ({
                 <div className="font-medium text-[#656C7B] mb-2 my-3">Hành động khác</div>
                 <div
                     onClick={addUserToConversation}
-                    className="flex p-3.5 rounded-lg bg-[#F6F7F8] gap-2 !justify-between mb-3 cursor-pointer active:bg-[#eef0f5] select-none hover:bg-gray-100"
+                    className="flex p-3.5 rounded-lg bg-[#F6F7F8] gap-2 justify-between! mb-3 cursor-pointer active:bg-[#eef0f5] select-none hover:bg-gray-100"
                 >
                     <UserAddOutlined className="text-[20px]" />
                     <div className="flex-1 font-medium">Thêm thành viên mới</div>
                 </div>
                 <div
                     onClick={() => deleteConfirmModalRef.current?.openModal("leave")}
-                    className="flex p-3.5 rounded-lg bg-[#F6F7F8] gap-2 !justify-between cursor-pointer active:bg-[#eef0f5] select-none hover:bg-gray-100"
+                    className="flex p-3.5 rounded-lg bg-[#F6F7F8] gap-2 justify-between! cursor-pointer active:bg-[#eef0f5] select-none hover:bg-gray-100"
                 >
                     <LogoutOutlined className="text-[19px] text-red-500" />
                     <div className="flex-1 font-medium text-red-500">Rời nhóm</div>

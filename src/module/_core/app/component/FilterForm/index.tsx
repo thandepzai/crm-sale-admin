@@ -87,7 +87,7 @@ interface FilterFormItemProps {
 
 const FilterFormItem = ({ data, filterName, filterForm }: FilterFormItemProps) => {
     if (data.type === FilterFormItemType.Input) {
-        const { name, label, placeholder, className = "!w-[200px]", onChange } = data;
+        const { name, label, placeholder, className = "w-[200px]!", onChange } = data;
 
         return (
             <Form.Item name={[filterName, name]} label={label} className="mb-4 [&>div>.ant-form-item-label]:pb-[6px]">
@@ -100,7 +100,7 @@ const FilterFormItem = ({ data, filterName, filterForm }: FilterFormItemProps) =
             </Form.Item>
         );
     } else if (data.type === FilterFormItemType.InputNumber) {
-        const { name, label, placeholder, className = "!w-[200px]", onChange } = data;
+        const { name, label, placeholder, className = "w-[200px]!", onChange } = data;
 
         return (
             <Form.Item name={[filterName, name]} label={label} className="mb-4 [&>div>.ant-form-item-label]:pb-[6px]">
@@ -120,7 +120,7 @@ const FilterFormItem = ({ data, filterName, filterForm }: FilterFormItemProps) =
             showSearch,
             options,
             dropdownStyle,
-            className = "!w-[200px]",
+            className = "w-[200px]!",
             disabled,
             onChange
         } = data;
@@ -157,7 +157,7 @@ const FilterFormItem = ({ data, filterName, filterForm }: FilterFormItemProps) =
                                             "rounded-2xl cursor-pointer border-none bg-[#f2f5f9] hover:bg-[#daecfb]",
                                             (!!dataSelect && dataSelect.includes(value)) ||
                                                 (!dataSelect && defaultValue === value)
-                                                ? "!bg-primary text-white"
+                                                ? "bg-primary! text-white"
                                                 : "bg-[#F5F5F5] text-secondary-typo",
                                             className
                                         )}
@@ -176,7 +176,7 @@ const FilterFormItem = ({ data, filterName, filterForm }: FilterFormItemProps) =
             </Form.Item>
         );
     } else if (data.type === FilterFormItemType.Date) {
-        const { name, label, placeholder, className = "!w-[200px]", onChange } = data;
+        const { name, label, placeholder, className = "w-[200px]!", onChange } = data;
 
         return (
             <Form.Item name={[filterName, name]} label={label} className="mb-4 [&>div>.ant-form-item-label]:pb-[6px]">
@@ -231,7 +231,7 @@ const FilterForm = <T,>({ filterName, items, filter, changeFilter, className }: 
                     <div className="flex gap-2 w-60 items-end mb-4">
                         <SearchButton className="flex-auto h-[34px]" />
                         <Button
-                            className="flex-auto h-[34px] border-none !bg-[#16A085] !text-white hover:opacity-80"
+                            className="flex-auto h-[34px] border-none bg-[#16A085]! text-white! hover:opacity-80"
                             onClick={handleResetFilter}
                         >
                             {strings.reset}

@@ -44,7 +44,7 @@ const ConversationItem = memo(({ data, isActive, onClick, actions = [], classNam
         <div
             className={clsx(
                 "px-4.5 h-20 py-3 flex gap-4 items-center cursor-pointer hover:bg-gray-200 group select-none",
-                isActive && "!bg-blue-100",
+                isActive && "bg-blue-100!",
                 className
             )}
             onClick={() => onClick(data)}
@@ -72,7 +72,7 @@ const ConversationItem = memo(({ data, isActive, onClick, actions = [], classNam
                                         e.stopPropagation();
                                         act.onClick(data, e);
                                     }}
-                                    className="group-hover:!flex !hidden size-7 flex-center rounded-md hover:bg-gray-300 active:bg-gray-100"
+                                    className="group-hover:flex! hidden! size-7 flex-center rounded-md hover:bg-gray-300 active:bg-gray-100"
                                 >
                                     {act.icon}
                                 </button>
@@ -91,7 +91,7 @@ const ConversationItem = memo(({ data, isActive, onClick, actions = [], classNam
                                         {actionsPopup.map((action) => (
                                             <div
                                                 key={action.title + JSON.stringify(action.icon)}
-                                                className="w-[210px] px-3.5 h-10 flex items-center !justify-start gap-2 rounded-md font-medium cursor-pointer hover:bg-gray-100"
+                                                className="w-[210px] px-3.5 h-10 flex items-center justify-start! gap-2 rounded-md font-medium cursor-pointer hover:bg-gray-100"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     setMenuOpen(false);
@@ -107,7 +107,7 @@ const ConversationItem = memo(({ data, isActive, onClick, actions = [], classNam
                             >
                                 <button
                                     onClick={(e) => e.stopPropagation()}
-                                    className="group-hover:!flex !hidden size-7 flex-center hover:bg-gray-300 active:bg-gray-100 rounded-md"
+                                    className="group-hover:flex! hidden! size-7 flex-center hover:bg-gray-300 active:bg-gray-100 rounded-md"
                                 >
                                     <EllipsisOutlined className="text-lg" />
                                 </button>

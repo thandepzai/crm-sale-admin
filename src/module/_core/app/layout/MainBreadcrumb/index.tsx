@@ -23,7 +23,7 @@ const MainBreadcrumb = () => {
                         href={item.href ?? ""}
                         className={clsx(
                             "text-cp text-slate-500 truncate hover:text-primary",
-                            !item.href ? "!text-primary pointer-events-none" : "max-w-[20%]"
+                            !item.href ? "text-primary! pointer-events-none" : "max-w-[20%]"
                         )}
                     >
                         {item.title}

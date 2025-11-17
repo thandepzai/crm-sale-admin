@@ -12,7 +12,7 @@ export interface IconButtonProps {
 const IconButton = memo(({ icon, label, onClick }: IconButtonProps) => (
     <div
         onClick={onClick}
-        className="cursor-pointer py-2 hover:bg-gray-200 active:bg-gray-300 font-medium px-2 rounded-lg gap-2 !justify-start"
+        className="cursor-pointer py-2 hover:bg-gray-200 active:bg-gray-300 font-medium px-2 rounded-lg gap-2 justify-start!"
     >
         {icon}
         {label}

@@ -141,7 +141,7 @@ const CourseOfUserView = () => {
                     <AppLoadingView containerClassName="h-[60vh]" />
                 ) : data ? (
                     <div className="table-container">
-                        <div className="title-table !flex-row !justify-end">
+                        <div className="title-table flex-row! justify-end!">
                             {verifyACP(CourseACP.UpdateEnroll) ? (
                                 <>
                                     <Button type="primary" onClick={() => courseOfUserFormRef.current?.open()}>
@@ -212,7 +212,7 @@ const CourseOfUserView = () => {
                 okButtonProps={{
                     loading: removeCoursesOfUserMutation.isPending,
                     type: "text",
-                    className: "bg-red-500 !text-white hover:!bg-red-400"
+                    className: "bg-red-500 text-white! hover:bg-red-400!"
                 }}
             />
         </Block>
