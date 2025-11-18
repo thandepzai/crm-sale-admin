@@ -109,7 +109,7 @@ export class AuthService {
     };
 
     static logout = () => {
-        // location.replace("/");
+        location.replace("/");
         localStorage.removeItem("user");
         localStorage.removeItem("ACCESS_TOKEN");
     };

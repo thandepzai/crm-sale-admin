@@ -1,3 +1,12 @@
+:global(.ant-layout-sider-collapsed) .mainHeader {
+  padding: 0px !important;
+  margin: 30px auto 24px auto !important;
+}
+
+:global(.ant-layout-sider-collapsed) .mainHeader :global(.image) {
+  margin-left: 10px !important;
+}
+
 .mainMenu {
   font-weight: 500 !important;
   border-width: 0px !important;
@@ -7,13 +16,38 @@
   padding: 0 13px !important;
 }
 
-.mainMenu :global(.ant-menu-item) {
+.mainMenu :global(.ant-menu-sub) {
+  background-color: white !important;
+}
+
+.mainMenu :global(.ant-menu-submenu-selected .ant-menu-submenu-title) {
+  background-color: #ecedee !important;
+}
+
+.mainMenu :global(.ant-menu-item),
+.mainMenu :global(.ant-menu-submenu-title) {
   margin: 0 !important;
   border-radius: 6px !important;
   padding: 12px !important;
   height: 48px !important;
   font-size: 16px;
   color: #183348 !important;
+  margin-bottom: 8px !important;
+  width: 100% !important;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.mainMenu:global(.ant-menu-vertical .ant-menu-item),
+.mainMenu:global(.ant-menu-vertical .ant-menu-submenu-title) {
+  padding: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainMenu:global(.ant-menu-vertical .ant-menu-title-content) {
+  display: none !important;
 }
 
 .mainMenu :global(.ant-menu-item.ant-menu-item-selected) {
@@ -21,7 +55,8 @@
   color: #36464e !important;
 }
 
-.mainMenu :global(.ant-menu-item .anticon) {
+.mainMenu :global(.ant-menu-item .anticon),
+.mainMenu :global(.ant-menu-submenu-title .anticon) {
   color: #546d78 !important;
   font-size: 18px !important;
 }

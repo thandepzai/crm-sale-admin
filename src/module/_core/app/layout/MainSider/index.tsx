@@ -1,21 +1,26 @@
-import { HomeOutlined } from "@ant-design/icons";
+import { HomeOutlined, LockOutlined } from "@ant-design/icons";
 import { AuthService } from "module/auth/domain/service/auth";
 import { cleanArray } from "lib/util/functions";
 import { Layout, Menu } from "antd";
 import Link from "next/link";
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { IMenuItem } from "./data";
 import { useWindowSize } from "@lib/hook/useWindowSize";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.css";
 import { ChevronsIcon } from "../../icon/ChevronsIcon";
+import clsx from "clsx";
 
 interface MainSiderProps {
   isSiderCollapsed: boolean;
+  setIsSiderCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
-const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
+const MainSider = ({
+  isSiderCollapsed,
+  setIsSiderCollapsed,
+}: MainSiderProps) => {
   const pathname = usePathname();
+
   const { verifyACR, verifyACP } = AuthService.useAuth();
   const { deviceType } = useWindowSize();
 
@@ -52,6 +57,25 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
         label: "Home Page",
         url: "/",
         icon: React.createElement(HomeOutlined),
+      },
+      {
+        key: "auth",
+        label: "Phân quyền",
+        icon: React.createElement(LockOutlined),
+        children: [
+          {
+            key: "permission",
+            label: "Quyền",
+            url: "/permission",
+            icon: React.createElement(LockOutlined),
+          },
+          {
+            key: "role",
+            label: "Chức vụ",
+            url: "/role",
+            icon: React.createElement(LockOutlined),
+          },
+        ],
       },
     ];
 
@@ -101,18 +125,30 @@ const MainSider = ({ isSiderCollapsed }: MainSiderProps) => {
       collapsed={isSiderCollapsed}
       onMouseLeave={onHideScrollBar}
       onMouseEnter={onShowScrollBar}
-      className="fixed! z-30! h-auto! tab:relative"
       style={{ minHeight: "100vh", background: "white" }}
       collapsedWidth={deviceType === "mobile" ? 0 : "80px"}
     >
-      <div className="mt-9 mb-7 h-12 flex items-center justify-between pr-6 pl-7">
+      <div
+        className={clsx(
+          "mt-9 mb-7 h-12 flex items-center justify-between pr-6 pl-7 header",
+          styles.mainHeader
+        )}
+      >
         <img
           src="https://admin.mapxdev.com/images/logo-128.png"
           alt=""
-          className="h-full aspect-square"
+          className="h-full aspect-square image"
         />
-        <div className="w-7 h-7 cursor-pointer rounded overflow-hidden hover:bg-slate-100 active:bg-slate-200">
-          <ChevronsIcon className="w-7 h-7" />
+        <div
+          onClick={() => setIsSiderCollapsed((prev) => !prev)}
+          className="size-7 rounded overflow-hidden hover:bg-slate-100 active:bg-slate-200 cursor-pointer max-tab:hidden"
+        >
+          <ChevronsIcon
+            className={clsx(
+              "w-7 h-7 transition-all duration-300",
+              isSiderCollapsed ? "-scale-x-100" : ""
+            )}
+          />
         </div>
       </div>
 

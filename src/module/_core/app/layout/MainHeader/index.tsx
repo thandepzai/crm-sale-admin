@@ -1,95 +1,60 @@
 "use client";
 import {
   LogoutOutlined,
-  CaretRightOutlined,
-  SearchOutlined,
   ArrowLeftOutlined,
+  DownOutlined,
 } from "@ant-design/icons";
 import { AuthService } from "module/auth/domain/service/auth";
 import { MeService } from "module/auth/domain/service/me";
-import { Dropdown, Input, Layout } from "antd";
-import React, { ReactNode, useState } from "react";
+import { Dropdown, Layout } from "antd";
 import { HeaderService } from "./service";
 import Link from "next/link";
 import {
   closeLoadingOverlay,
   openLoadingOverlay,
 } from "../../component/Loading/LoadingOverlay";
-import { useWindowSize } from "@lib/hook/useWindowSize";
-import { usePathname } from "next/navigation";
+import { BellIcon } from "../../icon/BellIcon";
+import { ChevronsIcon } from "../../icon/ChevronsIcon";
 import clsx from "clsx";
 
 interface MainHeaderProps {
   isSiderCollapsed: boolean;
   setIsSiderCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
-  customContent?: ReactNode;
 }
 
 const MainHeader = ({
   isSiderCollapsed,
   setIsSiderCollapsed,
-  customContent,
 }: MainHeaderProps) => {
-  const pathname = usePathname();
-  const [valueSearch, setValueSearch] = useState("");
-  const { deviceType } = useWindowSize();
   const { logoutMutation } = AuthService.useAuthAction();
   const { data: dataHeader } = HeaderService.useHeader();
   const { data } = MeService.useMe();
 
   return (
-    <Layout.Header
-      className={clsx(
-        "h-16 px-8 flex items-center justify-between border-b",
-        pathname === "/" ? "bg-[#eff2f6]" : "bg-white"
-      )}
-    >
+    <Layout.Header className="h-[76px]! px-4.5! flex items-center justify-between bg-white! relative">
       <div
-        className="fixed top-3.5 w-8 h-8 inset-y-auto text-base text-white bg-[#588FC8] hover:bg-[#5484b9] z-50 rounded-full cursor-pointer duration-100"
-        style={{
-          left: isSiderCollapsed
-            ? deviceType !== "mobile"
-              ? "calc(80px - 1rem)"
-              : "0.5rem"
-            : "calc(270px - 1rem)",
-          transitionDuration: "0.3s",
-          transitionTimingFunction: "ease-in-out",
-          rotate: isSiderCollapsed ? "" : "180deg",
-        }}
-        onClick={() => setIsSiderCollapsed(!isSiderCollapsed)}
+        onClick={() => setIsSiderCollapsed((prev) => !prev)}
+        className="size-7 rounded overflow-hidden hover:bg-slate-100 active:bg-slate-200 cursor-pointer absolute left-0.5 tab:hidden"
       >
-        <CaretRightOutlined />
+        <ChevronsIcon
+          className={clsx(
+            "w-7 h-7 transition-all duration-300",
+            isSiderCollapsed ? "-scale-x-100" : ""
+          )}
+        />
       </div>
-      <div className="pl-4 flex items-center">
+      <div className="flex items-center max-tab:ml-3">
         {dataHeader.linkBack ? (
           <Link href={dataHeader.linkBack} className="text-primary! mr-2">
             <ArrowLeftOutlined />
           </Link>
         ) : null}
-        <div className="block-heading text-base! tab:text-xl! line-clamp-2">
-          {dataHeader.title}
+        <div className="block-heading text-xl! tab:text-[24px]! line-clamp-1 font-medium">
+          {dataHeader.title} Đơn hàng
         </div>
       </div>
-      {dataHeader.onSearch && (
-        <div className="flex bg-[#f2f5f9] px-3 rounded-lg w-[30%]">
-          <Input
-            onChange={(value) => setValueSearch(value.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                dataHeader.onSearch!(valueSearch);
-              }
-            }}
-          />
-          <div
-            className="cursor-pointer"
-            onClick={() => dataHeader.onSearch!(valueSearch)}
-          >
-            <SearchOutlined />
-          </div>
-        </div>
-      )}
-      <div>{customContent}</div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-6.5">
+        <BellIcon color="#626C90" className="text-2xl" />
         <Dropdown
           menu={{
             items: [
@@ -113,15 +78,23 @@ const MainHeader = ({
             ],
           }}
         >
-          <div className=" h-12 py-1 pl-1 pr-3 border border-[#ccc] rounded-full flex items-center gap-2 cursor-pointer">
+          <div className="flex gap-3.5 items-center cursor-pointer">
             <img
-              className="max-w-[30px] aspect-square rounded-full"
-              src={data?.avatar}
+              src="https://admin.mapxdev.com/images/logo-128.png"
               alt=""
+              className="size-11 rounded-full"
             />
-            <span className="hidden lap:block text-[#333333] font-medium">
-              {data?.username}
-            </span>
+            <div className="flex flex-col">
+              <div className="text-[#36464E] font-medium h-6! flex items-center">
+                Name
+              </div>
+              <div className="text-[#36464E] h-6! flex items-center">
+                name@shs.com
+              </div>
+            </div>
+            <div className="size-6 flex-center cursor-pointer rounded-sm hover:bg-gray-100 active:bg-gray-200">
+              <DownOutlined />
+            </div>
           </div>
         </Dropdown>
       </div>

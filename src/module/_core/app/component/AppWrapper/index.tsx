@@ -25,23 +25,23 @@ const AnonyMousComponentHook = () => {
 const AppWrapper = ({ children }: AppWrapperProps) => {
   const router = useRouter();
   const pathname = usePathname();
-//   const { user } = AuthService.useAuth();
+  const { user } = AuthService.useAuth();
   const { verifyAuthMutation } = AuthService.useAuthAction();
 
-//   useIsomorphicLayoutEffect(() => {
-//     if (user) verifyAuthMutation.mutate();
-//   }, []);
+  useIsomorphicLayoutEffect(() => {
+    if (user) verifyAuthMutation.mutate();
+  }, []);
 
-//   if (pathname == "/login") {
-//     if (user) {
-//       router.push("/");
-//       return null;
-//     }
-//     return <>{children}</>;
-//   } else if (!user) {
-//     router.push("/login");
-//     return null;
-//   }
+  if (pathname == "/login") {
+    if (user) {
+      router.push("/");
+      return null;
+    }
+    return <>{children}</>;
+  } else if (!user) {
+    router.push("/login");
+    return null;
+  }
 
   return (
     <div id="root" className="invisible">
