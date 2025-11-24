@@ -4,9 +4,10 @@ import MainForm from "module/_core/app/component/Form/MainForm";
 import { AuthService } from "module/auth/domain/service/auth";
 import strings from "module/_core/infras/constant/strings";
 import { errorHandler } from "module/_core/infras/util/exceptionHandler";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, InputNumber, Radio, Select, Switch } from "antd";
 import { AppLoadingViewOverlay } from "@module/_core/app/component/Loading/AppLoading";
 import { useRouter, useSearchParams } from "next/navigation";
+import { displayErrorNoti } from "@module/_core/infras/util/notification";
 
 interface LoginFormData {
   username: string;
@@ -27,7 +28,18 @@ const LoginView = () => {
       },
       {
         onError: (error: any) => {
-          errorHandler(error);
+          const msg = error?.message || "";
+          if (msg === "Tài khoản không tồn tại")
+            displayErrorNoti({
+              message: "Đăng nhập không thành công",
+              description: "Tài khoản không tồn tại",
+            });
+          else if (msg === "Mật khẩu không chính xác")
+            displayErrorNoti({
+              message: "Đăng nhập không thành công",
+              description: "Mật khẩu không chính xác",
+            });
+          else errorHandler(error);
         },
         onSuccess: async () => {
           router.replace((redirect as string) ?? "/");
@@ -74,7 +86,7 @@ const LoginView = () => {
             >
               <Input.Password placeholder="Mật khẩu" />
             </Form.Item>
-            <Button type="primary" htmlType="submit" color="red">
+            <Button type="primary" htmlType="submit" className="mt-2 !h-[40px]">
               Đăng nhập
             </Button>
           </div>

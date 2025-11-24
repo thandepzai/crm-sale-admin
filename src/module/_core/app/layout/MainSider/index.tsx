@@ -1,15 +1,21 @@
-import { HomeOutlined, LockOutlined } from "@ant-design/icons";
 import { AuthService } from "module/auth/domain/service/auth";
 import { cleanArray } from "lib/util/functions";
 import { Layout, Menu } from "antd";
 import Link from "next/link";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef } from "react";
 import { IMenuItem } from "./data";
 import { useWindowSize } from "@lib/hook/useWindowSize";
 import { usePathname } from "next/navigation";
 import styles from "./style.module.css";
 import { ChevronsIcon } from "../../icon/ChevronsIcon";
 import clsx from "clsx";
+import { ChartIcon } from "../../icon/ChartIcon";
+import { OrderIcon } from "../../icon/OrderIcon";
+import { TransactionIcon } from "../../icon/TransactionIcon";
+import { BoxIcon } from "../../icon/BoxIcon";
+import { StudentIcon } from "../../icon/StudentIcon";
+import { SettingIcon } from "../../icon/SettingIcon";
+import { ChatIcon } from "../../icon/ChatIcon";
 
 interface MainSiderProps {
   isSiderCollapsed: boolean;
@@ -47,35 +53,52 @@ const MainSider = ({
 
     const menuItems = [
       {
-        key: "dev",
+        key: "statistical",
         label: "Thống kê",
-        url: "/dev",
-        icon: React.createElement(HomeOutlined),
-      },
-      {
-        key: "home",
-        label: "Home Page",
         url: "/",
-        icon: React.createElement(HomeOutlined),
+        icon: <ChartIcon className="w-[20px]" color="#546D78" />,
       },
       {
-        key: "auth",
-        label: "Phân quyền",
-        icon: React.createElement(LockOutlined),
-        children: [
-          {
-            key: "permission",
-            label: "Quyền",
-            url: "/permission",
-            icon: React.createElement(LockOutlined),
-          },
-          {
-            key: "role",
-            label: "Chức vụ",
-            url: "/role",
-            icon: React.createElement(LockOutlined),
-          },
-        ],
+        key: "order",
+        label: "Đơn hàng",
+        url: "/order",
+        icon: <OrderIcon className="w-[20px]" color="#546D78" />,
+      },
+      {
+        key: "transaction",
+        label: "Giao dịch",
+        url: "/transaction",
+        icon: <TransactionIcon className="w-[20px]" color="#546D78" />,
+      },
+      {
+        key: "course-manage",
+        label: "Quản lý khoá học",
+        url: "/course-manage",
+        icon: <BoxIcon className="w-[20px]" color="#546D78" />,
+      },
+      {
+        key: "notification-system",
+        label: "Hệ thống báo báo",
+        url: "/notification-system",
+        icon: <ChartIcon className="w-[20px]" color="#546D78" />,
+      },
+      {
+        key: "student",
+        label: "Học sinh",
+        url: "/student",
+        icon: <StudentIcon className="w-[20px]" color="#546D78" />,
+      },
+      {
+        key: "chat",
+        label: "Chat",
+        url: "/chat",
+        icon: <ChatIcon className="w-[20px]" color="#546D78" />,
+      },
+      {
+        key: "permission",
+        label: "Phân Quyền",
+        url: "/permission",
+        icon: <SettingIcon className="w-[20px]" color="#546D78" />,
       },
     ];
 

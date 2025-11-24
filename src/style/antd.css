@@ -1,0 +1,92 @@
+/* ----- INPUT ----- */
+.ant-form-item .ant-form-item-label > label {
+  color: #626c90;
+  font-weight: 500;
+  flex-direction: row-reverse;
+}
+
+.ant-form-item .ant-form-item-label > label.ant-form-item-required::before {
+  color: #626c90;
+  margin-left: 1px;
+  font-weight: 500;
+}
+.ant-form-item .ant-form-item-label > label::after {
+  display: none !important;
+}
+
+.ant-input-outlined,
+.ant-input-outlined:focus,
+.ant-input-outlined:hover {
+  border-radius: 8px;
+  padding: 8px 15px;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  background: white;
+}
+
+.ant-input-number-outlined,
+.ant-input-number-outlined:focus,
+.ant-input-number-outlined:hover,
+.ant-input-number-outlined:focus-within {
+  border-radius: 8px;
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #d0d5dd;
+  box-shadow: 0px 1px 2px 0px #1018280d;
+}
+
+/* ----- RADIO ----- */
+.ant-radio-group-outline .ant-radio .ant-radio-inner {
+  border: 2px solid #e7e7e7;
+  width: 24px;
+  height: 24px;
+}
+
+.ant-radio-group-outline .ant-radio.ant-radio-checked .ant-radio-inner {
+  background-color: #808182;
+  border: 0px;
+}
+.ant-radio-group-outline .ant-radio.ant-radio-checked .ant-radio-inner::after {
+  transform: scale(0.5);
+}
+
+/* ----- SWITCH ----- */
+.ant-switch {
+  height: 24px !important;
+}
+
+.ant-switch .ant-switch-inner {
+  background-color: #808182;
+  height: 24px !important;
+}
+.ant-switch .ant-switch-handle {
+  height: 16px;
+  width: 16px;
+  border-radius: 99999;
+  margin-top: 2px;
+  margin-left: 1px;
+}
+
+/* ----- SELECTOR ----- */
+.ant-select-outlined.ant-select-single {
+  height: 40px;
+}
+
+.ant-select-outlined.ant-select-single .ant-select-selector,
+.ant-select-outlined.ant-select-single .ant-select-selector:hover {
+  height: 40px;
+  border: 1px solid #e7e7e7 !important;
+}
+.ant-select-outlined:not(.ant-select-disabled):not(
+    .ant-select-customize-input
+  ):not(.ant-pagination-size-changer):hover
+  .ant-select-selector {
+  border-color: #c0bfbf !important;
+}
+
+/* ----- Button ----- */
+.ant-btn {
+  box-shadow: 0px 1px 2px 0px #1018280d;
+  font-weight: 500;
+  border-radius: 8px;
+}
