@@ -86,7 +86,7 @@ const LoginView = () => {
             >
               <Input.Password placeholder="Mật khẩu" />
             </Form.Item>
-            <Button type="primary" htmlType="submit" className="mt-2 !h-[40px]">
+            <Button type="primary" htmlType="submit" className="mt-2 h-[40px]!">
               Đăng nhập
             </Button>
           </div>

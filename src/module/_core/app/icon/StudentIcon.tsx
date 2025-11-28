@@ -2,7 +2,7 @@ import { IconProps } from "module/_core/app/config/type/icon";
 
 export const StudentIcon = ({
   className = "w-6 h-6",
-  color = "#000000",
+  color = "#626C90",
 }: IconProps) => {
   return (
     <svg

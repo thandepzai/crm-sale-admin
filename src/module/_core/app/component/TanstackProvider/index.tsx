@@ -3,8 +3,8 @@ import "@style/globals.css";
 import { ThemeProvider } from "@style/antd.theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { App as AntdApp, ConfigProvider } from "antd";
-import "@ant-design/v5-patch-for-react-19";
+import { App as AntdApp, ConfigProvider } from "antd";  // AntdApp for toast
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,12 +22,14 @@ export default function TanstackProvider({
 }>) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ConfigProvider theme={ThemeProvider}>
-        <AntdApp>
-          {children}
-          <ReactQueryDevtools initialIsOpen={false} />
-        </AntdApp>
-      </ConfigProvider>
+      <AntdRegistry>
+        <ConfigProvider theme={ThemeProvider}>
+          <AntdApp>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+          </AntdApp>
+        </ConfigProvider>
+      </AntdRegistry>
     </QueryClientProvider>
   );
 }

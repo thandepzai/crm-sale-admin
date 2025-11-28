@@ -1,0 +1,3 @@
+.orderTable :global(.ant-table-selection-column) {
+  border-right: 0px !important;
+}

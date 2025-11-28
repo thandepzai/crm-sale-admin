@@ -1,4 +1,4 @@
-/* ----- INPUT ----- */
+/* ----- Form ----- */
 .ant-form-item .ant-form-item-label > label {
   color: #626c90;
   font-weight: 500;
@@ -12,27 +12,6 @@
 }
 .ant-form-item .ant-form-item-label > label::after {
   display: none !important;
-}
-
-.ant-input-outlined,
-.ant-input-outlined:focus,
-.ant-input-outlined:hover {
-  border-radius: 8px;
-  padding: 8px 15px;
-  border: 1px solid #d0d5dd;
-  box-shadow: 0px 1px 2px 0px #1018280d;
-  background: white;
-}
-
-.ant-input-number-outlined,
-.ant-input-number-outlined:focus,
-.ant-input-number-outlined:hover,
-.ant-input-number-outlined:focus-within {
-  border-radius: 8px;
-  width: 100%;
-  padding: 4px;
-  border: 1px solid #d0d5dd;
-  box-shadow: 0px 1px 2px 0px #1018280d;
 }
 
 /* ----- RADIO ----- */
@@ -67,26 +46,34 @@
   margin-left: 1px;
 }
 
-/* ----- SELECTOR ----- */
-.ant-select-outlined.ant-select-single {
-  height: 40px;
+/* ----- TABLE ----- */
+.ant-table-wrapper .ant-table .ant-table-container {
+  border-radius: 0px;
 }
 
-.ant-select-outlined.ant-select-single .ant-select-selector,
-.ant-select-outlined.ant-select-single .ant-select-selector:hover {
-  height: 40px;
-  border: 1px solid #e7e7e7 !important;
-}
-.ant-select-outlined:not(.ant-select-disabled):not(
-    .ant-select-customize-input
-  ):not(.ant-pagination-size-changer):hover
-  .ant-select-selector {
-  border-color: #c0bfbf !important;
-}
-
-/* ----- Button ----- */
-.ant-btn {
-  box-shadow: 0px 1px 2px 0px #1018280d;
+.ant-table-wrapper
+  .ant-table
+  .ant-table-container
+  .ant-table-thead
+  .ant-table-cell {
+  background-color: white;
+  color: #36464e;
   font-weight: 500;
-  border-radius: 8px;
+  font-size: 12px;
+  padding: 8.5px 16px;
+}
+
+.ant-table-wrapper
+  .ant-table
+  .ant-table-container
+  .ant-table-tbody
+  .ant-table-row
+  > td {
+  background-color: white;
+  padding: 6px 16px;
+}
+
+.ant-table-wrapper div.ant-table {
+  scrollbar-color: rgba(0,0,0,0.1) rgba(182, 181, 181, 0.05);
+
 }
