@@ -54,5 +54,12 @@ export const ThemeProvider: ThemeConfig = {
       controlOutlineWidth: 0,
       lineHeight: 2.14285714286,
     },
+    Switch: {
+      trackMinWidth: 42,
+      trackHeight: 24,
+      colorTextQuaternary:"#808182",
+      handleSize: 16,
+      trackPadding: 4,
+    },
   },
 };

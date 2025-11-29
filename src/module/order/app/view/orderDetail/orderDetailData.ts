@@ -1,0 +1,42 @@
+export const OrderDetailData = [
+  {
+    id: "HN01",
+    name: "Nguyễn Văn A",
+    course: ["Lớp 10", "Lớp 11"],
+    price: "3,000,000đ",
+    sale: "2,500,000đ",
+    total: "2,500,000đ",
+  },
+  {
+    id: "HN02",
+    name: "Trần Thị B",
+    course: ["Lớp 12"],
+    price: "1,500,000đ",
+    sale: "1,200,000đ",
+    total: "1,200,000đ",
+  },
+  {
+    id: "HN03",
+    name: "Lê Văn C",
+    course: ["Lớp 10"],
+    price: "1,000,000đ",
+    sale: "800,000đ",
+    total: "800,000đ",
+  },
+  {
+    id: "HN04",
+    name: "Phạm Thị D",
+    course: ["Lớp 11"],
+    price: "1,200,000đ",
+    sale: "1,000,000đ",
+    total: "1,000,000đ",
+  },
+  {
+    id: "HN05",
+    name: "Hoàng Văn E",
+    course: ["Lớp 12"],
+    price: "1,500,000đ",
+    sale: "1,300,000đ",
+    total: "1,300,000đ",
+  },
+];
